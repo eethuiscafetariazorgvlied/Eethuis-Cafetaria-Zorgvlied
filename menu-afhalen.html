@@ -38,15 +38,25 @@
       font-size: 16px;
       color: #333;
     }
-
-    iframe {
-      display: block;
-      margin-top: 60px;
-      width: 100%;
-      height: calc(100vh - 60px);
-      border: none;
-      pointer-events: none;
+    .pdf-grid{
+      max-width:1200px;
+      margin: 100px auto 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
+    .pdf-grid img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+}
+
+    .pdf-grid a:hover img {
+      transform: scale(1.03);
+}
     
     .back-home {
       display: inline-block;
@@ -61,8 +71,14 @@
 <header>
   <a href="index.html" class="back-home">← Terug naar home</a>
 </header>
+<div class="pdf-grid">
 
-<iframe src="menus/afhalen.pdf"></iframe>
+  <a href="menus/afhalen.pdf" target="_blank">
+    <img src="previews/afhalen.jpg" alt="afhalenkaart" loading="lazy">
+  </a>
+
+
+</div>
 
 </body>
 </html>
